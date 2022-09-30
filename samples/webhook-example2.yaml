@@ -1,0 +1,20 @@
+openapi: 3.1.0
+info:
+  title: My Demo API
+  version: 1.0.0
+  summary: An API with examples of features in 3.1
+webhooks:
+  $ref: "#/components/pathItems/newThingAlert"
+components:
+  pathItems:
+    newThiFfgAlert:
+      summary: Notification that a new thing has been created
+      post:
+        requestBody:
+          content:
+            applicaton/json:
+              schema:
+                type: object
+                properties:
+                  thingName: null
+                  type: string

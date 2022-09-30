@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: Conferences API
+  description: This is a sample Conferences API
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: bgranados@twilio.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+tags:
+  - name: conferences
+    description: Everything about conferences
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+paths:
+  /conferences/{id}:
+    get:
+      tags:
+        - conferences
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the conference to be retrived
+          schema:
+            type: string
+      summary: Get details of a conference
+      operationId: getConferences
+      responses:
+        "200":
+          description: A paged array of conferences
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/conference"
+        "400":
+          description: Invalid ID supplied
+          content: {}
+        "404":
+          description: Conference not found
+          content: {}
+        "405":
+          description: Validation exception
+          content: {}
+components:
+  schemas:
+    conference:
+      required:
+        - name
+        - photoUrls
+      type: object
+      properties:
+        id:
+          type: string
+          example: PyConES22
+        name:
+          type: string
+          example: PyConES 2022
+        photoUrls:
+          type: array
+          items:
+            type: string
+            example: http://swagger.io/image.jpg
+        status:
+          type: string
+          description: pet status in the store
+          example: current
+          enum:
+            - past
+            - pending
+            - current
+            - future
