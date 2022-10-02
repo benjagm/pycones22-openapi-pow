@@ -2,7 +2,7 @@
 Benjamin Granados
 *Charla para la PyConES22*
 
-Slides disponibles [here](https://github.com/benjagm/pycones22-openapi-pow/blob/fbf5dd20c5c9c7b65e484f58c3defa66b4c40bd2/La%20magia%20de%20OpenAPI%20Specification.pdf)
+Slides disponibles [here](https://speakerdeck.com/benjagm/la-magia-de-openapi-specification)
 
 Recursos:
 - Introduction to OpenAPI Initiative [here  
